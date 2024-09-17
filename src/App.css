@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #e1e1e1;
+  background-color: #1e1e1e;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 600px;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 300px;
+  }
+}
+
+.container form label {
+  display: block;
+  margin-bottom: 0.8em;
+  font-weight: bold;
+}
+
+.container form input {
+  color: inherit;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 0.2em;
+  border: none;
+  border-bottom: solid 2px rgba(255, 255, 255, 0.2);
+  border-radius: 8px 8px 0 0;
+  font-size: 3.5rem;
+  font-weight: bold;
+  width: 90%;
+  outline: none;
+  transition: background-color 0.5s ease-in;
+}
+
+.container form input:focus {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.container .search-results ul {
+  overflow: hidden;
+}
+
+.container .search-results ul li {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 2.5rem;
+  color: rgba(255, 255, 255, 0.5);
+  list-style-type: "\2b50";
+  list-style-position: inside;
+  position: relative;
+  left: 100%;
+  animation: rigthToLeft 0.5s ease-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.container .search-results ul li:hover {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.container .search-results ul li span {
+  padding-left: 1ch; /*espaço de uma letra*/
+}
+
+@keyframes rigthToLeft {
+  0% {
+    left: 100%;
+  }
+  50% {
+    left: 50%;
+  }
+  100% {
+    left: 0;
+  }
+}
